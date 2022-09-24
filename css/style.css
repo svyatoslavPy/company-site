@@ -1,4 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 .container {
-  width: 72%;
-  width: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.header {
+  background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643e72 87.46%);
+}
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header .nav__primary {
+  display: flex;
+  flex-direction: column;
+}
+.header .nav__primary .nav__items,
+.header .nav__primary .nav__items--additionally {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.header .nav__primary .nav__items .circle:hover::before,
+.header .nav__primary .nav__items--additionally .circle:hover::before {
+  background-color: #f0145a;
+}
+.header .nav__primary .nav__items .nav__item .nav__link,
+.header .nav__primary .nav__items--additionally .nav__item .nav__link {
+  transition: 500ms;
+}
+.header .nav__primary .nav__items .nav__item .nav__link:hover,
+.header .nav__primary .nav__items--additionally .nav__item .nav__link:hover {
+  color: #f0145a;
+  transition: 500ms;
+}
+.header .nav__primary .nav__items .btn,
+.header .nav__primary .nav__items--additionally .btn {
+  width: 33px;
+  height: 25px;
+  padding: 5px 5px;
+  background: #f0145a;
+  border-radius: 8px;
+}
+.header .nav__primary .nav__items .circle::before,
+.header .nav__primary .nav__items--additionally .circle::before {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+.header .nav__primary .nav__items--additionally {
+  padding: 21px 50px;
 }/*# sourceMappingURL=style.css.map */

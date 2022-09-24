@@ -1,7 +1,73 @@
+@import 'mixin/mixin'; // mixin
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+$primary-color: white;
+
 .container {
-	width: 72%;
-	width: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 60px;
 }
 
+.header {
+  background: linear-gradient(228.57deg,
+      #323264 11.93%,
+      #323264 57.17%,
+      #643e72 87.46%);
 
+  .nav {
+    display: flex;
+    justify-content: space-between;
 
+    &__primary {
+      display: flex;
+      flex-direction: column;
+
+      .nav__items,
+      .nav__items--additionally {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: $primary-color;
+
+				.circle:hover::before {
+					background-color: #f0145a;
+				}
+
+        .nav__item {
+          .nav__link {
+            transition: 500ms;
+            &:hover {
+              color: #f0145a;
+              transition: 500ms;
+            }
+          }
+        }
+
+        .btn {
+          width: 33px;
+          height: 25px;
+          padding: 5px 5px;
+          background: #f0145a;
+          border-radius: 8px;
+        }
+
+        .circle::before {
+          display: block;
+          content: '';
+          width: 6px;
+          height: 6px;
+          background: $primary-color;
+          border-radius: 50%;
+        }
+      }
+
+      .nav__items--additionally {
+        padding: 21px 50px;
+      }
+    }
+  }
+}

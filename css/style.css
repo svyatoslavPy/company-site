@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 .container {
-  width: 100%;
+  width: 108%;
   margin: 0 auto;
   padding: 50px 60px;
+  /* Large desktops and laptops */
+}
+@media (min-width: 1200px) {
+  .container .container {
+    width: 90%;
+  }
 }
 
 .header {
@@ -10,7 +16,11 @@
 }
 .header .nav {
   display: flex;
+  position: relative;
   justify-content: space-between;
+}
+.header .nav .nav__logo {
+  z-index: 1;
 }
 .header .nav__primary {
   display: flex;
@@ -18,29 +28,42 @@
 }
 .header .nav__primary .nav__items,
 .header .nav__primary .nav__items--additionally {
+  z-index: 1;
   display: flex;
   align-items: center;
   -moz-column-gap: 12px;
        column-gap: 12px;
+  color: white;
+}
+.header .nav__primary .nav__items .nav__item,
+.header .nav__primary .nav__items--additionally .nav__item {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: white;
+}
+.header .nav__primary .nav__items .nav__item--special,
+.header .nav__primary .nav__items--additionally .nav__item--special {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 .header .nav__primary .nav__items .circle:hover::before,
 .header .nav__primary .nav__items--additionally .circle:hover::before {
   background-color: #f0145a;
 }
-.header .nav__primary .nav__items .nav__item .nav__link,
-.header .nav__primary .nav__items--additionally .nav__item .nav__link {
+.header .nav__primary .nav__items .nav__item .nav__link, .header .nav__primary .nav__items .nav__item--special .nav__link,
+.header .nav__primary .nav__items--additionally .nav__item .nav__link,
+.header .nav__primary .nav__items--additionally .nav__item--special .nav__link {
   transition: 500ms;
 }
-.header .nav__primary .nav__items .nav__item .nav__link:hover,
-.header .nav__primary .nav__items--additionally .nav__item .nav__link:hover {
+.header .nav__primary .nav__items .nav__item .nav__link:hover, .header .nav__primary .nav__items .nav__item--special .nav__link:hover,
+.header .nav__primary .nav__items--additionally .nav__item .nav__link:hover,
+.header .nav__primary .nav__items--additionally .nav__item--special .nav__link:hover {
   color: #f0145a;
   transition: 500ms;
 }
 .header .nav__primary .nav__items .btn,
 .header .nav__primary .nav__items--additionally .btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   width: 33px;
   height: 25px;
   padding: 5px 5px;
@@ -57,5 +80,24 @@
   border-radius: 50%;
 }
 .header .nav__primary .nav__items--additionally {
-  padding: 21px 50px;
+  padding: 21px 125px;
+}
+.header .picture__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 170px;
+}
+.header .picture__wrapper .picture__items {
+  position: absolute;
+  top: 320px;
+  color: white;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */

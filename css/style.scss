@@ -39,6 +39,7 @@ $primary-color: white;
 
         .nav__item {
           .nav__link {
+            text-transform: uppercase;
             transition: 500ms;
             &:hover {
               color: #f0145a;

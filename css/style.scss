@@ -6,7 +6,7 @@ $primary-color: white;
 
 
 .container {
-  width: 108%;
+  width: 100%;
   margin: 0 auto;
   padding: 50px 60px;
 
@@ -51,7 +51,6 @@ $primary-color: white;
 
   .nav {
     display: flex;
-    position: relative;
     justify-content: space-between;
 
     // /* Large desktops and laptops */
@@ -125,8 +124,9 @@ $primary-color: white;
           background-color: #f0145a;
         }
 
-        .nav__item, .nav__item--special {
-        
+        .nav__item,
+        .nav__item--special {
+
           .nav__link {
             transition: 500ms;
 
@@ -160,7 +160,9 @@ $primary-color: white;
       }
 
       .nav__items--additionally {
-        padding: 21px 125px;
+        display: flex;
+        padding-top: 18.5px;
+        justify-content: flex-end;
       }
     }
   }
@@ -184,5 +186,75 @@ $primary-color: white;
       text-align: center;
       color: #ffffff;
     }
+
+    .element__picture {
+      position: absolute;
+      left: 660px;
+      top: 730px;
+    }
+
   }
+
+  .info__text {
+    display: none;
+    justify-content: center;
+    column-gap: 60px;
+
+    .info-element {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+
+
+    .info__items {
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      font-weight: 700;
+      font-size: 38px;
+      width: 30%;
+
+      .info__item--special {
+        color: #f0145a;
+        line-height: 30px;
+        text-align: right;
+
+
+      }
+
+      .info__item {
+        padding-top: 30px;
+        color: #B3B3BA;
+        text-align: right;
+      }
+    }
+
+    .info__items--primary {
+      padding-top: 10px;
+      width: 50%;
+
+      .text--special {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #FFFFFF;
+      }
+
+      .text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 30px;
+        font-style: normal;
+        color: #FFFFFF;
+        width: 80%;
+      }
+    }
+  }
+
 }

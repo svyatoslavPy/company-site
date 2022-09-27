@@ -208,8 +208,8 @@
 }
 .header .icon {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
   -moz-column-gap: 25px;
        column-gap: 25px;
 }

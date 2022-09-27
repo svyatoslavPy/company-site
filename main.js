@@ -1,6 +1,13 @@
-const button = document.querySelector('.element__picture');
+const button = document.querySelector('.picture__btn');
+// console.log(botton);
 
-button.addEventListener('click', function () {
-    document.querySelector(".info__text").style.display = "flex";
+const infoText = document.querySelector('.info');
+// console.log(infoText);
+
+button.addEventListener('click', function (e) {
+    infoText.classList.toggle('info_active');
 });
+
+
+
 

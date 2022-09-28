@@ -4,9 +4,11 @@ const button = document.querySelector('.picture__btn');
 const infoText = document.querySelector('.info');
 // console.log(infoText);
 
-button.addEventListener('click', function (e) {
-    infoText.classList.toggle('info_active');
-});
+button.addEventListener('click', () => {
+        infoText.classList.toggle('info_active');
+    });
+
+
 
 
 

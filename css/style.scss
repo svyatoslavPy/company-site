@@ -63,6 +63,10 @@ $breakpoint__320: 320px; // breakpoint 320px
     &__logo {
       z-index: 1;
       // flex-basis: 20%;
+
+      @media (max-width: 768px) {
+        order: 1;
+      }
     }
 
     &__primary {
@@ -128,6 +132,7 @@ $breakpoint__320: 320px; // breakpoint 320px
         display: flex;
         padding-top: 18.5px;
         justify-content: flex-end;
+        flex-direction: row-reverse;
       }
     }
   }

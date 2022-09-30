@@ -52,6 +52,11 @@
 .header .nav__logo {
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .header .nav__logo {
+    order: 1;
+  }
+}
 .header .nav__primary {
   display: flex;
   flex-direction: column;
@@ -115,6 +120,7 @@
   display: flex;
   padding-top: 18.5px;
   justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 .header .picture {
   position: relative;
@@ -306,7 +312,7 @@
   border-radius: 12px 0px 0px 12px;
   opacity: 1;
 }
-.main .about-us__title #picture, .main .about-us__title .img {
+.main .about-us__title .img {
   width: 400px;
   height: 344px;
   opacity: 0;

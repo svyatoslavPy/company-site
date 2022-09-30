@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+.header,
+.main {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -30,7 +36,6 @@
 }
 
 .header {
-  overflow: hidden;
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643e72 87.46%);
 }
 .header .nav {
@@ -269,4 +274,114 @@
   .header .icon__title .icon__text {
     width: 315px;
   }
+}
+
+.main .line__wrapper {
+  margin: 0px 20px;
+}
+.main .line__wrapper .line::before {
+  content: "";
+  display: block;
+  width: 1470px;
+  height: 5px;
+  background: #cacadb;
+  border-radius: 0px 0px 12px 12px;
+}
+.main .line__additionally {
+  margin: 0px 40px;
+}
+.main .line__additionally .line__item::after {
+  content: "";
+  display: block;
+  width: 1430px;
+  height: 10px;
+  background: #e7e7f2;
+  border-radius: 0px 0px 12px 12px;
+}
+.main .about-us {
+  display: flex;
+  margin-top: 20px 0px 0px 0px;
+}
+.main .about-us__title__picture, .main .about-us__title #picture {
+  border-radius: 12px 0px 0px 12px;
+  opacity: 1;
+}
+.main .about-us__title #picture {
+  width: 400px;
+  height: 370px;
+  opacity: 0;
+  position: absolute;
+}
+.main .about-us__subtitle {
+  width: 1320px;
+  height: 344px;
+  background: #f5f5fa;
+  border-radius: 12px;
+}
+.main .about-us__subtitle {
+  padding: 30px 20px;
+}
+.main .about-us__subtitle .about-us__text,
+.main .about-us__subtitle .about-us__text--special,
+.main .about-us__subtitle .about-us__text--primary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.main .about-us__subtitle .about-us__text {
+  color: #B3B3BA;
+  font-size: 16px;
+  text-transform: none;
+}
+.main .about-us__subtitle .about-us__text--special {
+  color: #24a3ff;
+  margin-bottom: 5px;
+}
+.main .about-us__subtitle .about-us__text--primary {
+  font-size: 30px;
+  width: 830px;
+  line-height: 46px;
+  margin-bottom: 30px;
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-emphasis-color: transparent;
+          text-emphasis-color: transparent;
+}
+.main .about-us__subtitle .about-us__text--secondary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  color: #B3B3BA;
+  font-size: 14px;
+  margin-top: 6px;
+}
+.main .btn {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  margin-top: 30px;
+}
+.main .btn__slider, .main .btn__slider--primary, .main .btn__slider--secondary {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.main .btn__slider {
+  background: #24A3FF;
+}
+.main .btn__slider--primary, .main .btn__slider--secondary {
+  background: #24A3FF;
+  transition: 0.5s all;
+  cursor: pointer;
+  opacity: 0.2;
+}
+.main .btn__slider--primary:hover, .main .btn__slider--secondary:hover {
+  background: #24A3FF;
+  opacity: 1;
+  transition: 0.5s all;
 }/*# sourceMappingURL=style.css.map */

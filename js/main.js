@@ -6,8 +6,13 @@ const infoText = document.querySelector('.info');
 
 // btn__info
 
-let imgs = document.querySelectorAll('about-us .about-us__title img');
-let next = document.querySelector('.about-us .btn .btn__slider--primary');
+let imgs = document.querySelectorAll('.img');
+console.log(imgs);
+let next = document.querySelector('.btn__slider--primary');
+console.log(next);
+
+let back = document.querySelector('.btn__slider--secondary');
+console.log(back);
 
 let imgPicture = 0;
 
@@ -20,13 +25,22 @@ button.addEventListener('click', () => {
         infoText.classList.toggle('info_active');
     });
 
-
 next.addEventListener('click', () =>  {
      imgs[imgPicture].style.opacity = 0;
     if (imgPicture == imgs.length-1 ) {
         imgPicture = 0;
     } else {
         imgPicture++;
+    }
+    imgs[imgPicture].style.opacity = 1;
+});
+
+back.addEventListener('click', () =>  {
+     imgs[imgPicture].style.opacity = 0;
+    if (imgPicture == 0 ) {
+        imgPicture == imgs.length-1;
+    } else {
+        imgPicture--;
     }
     imgs[imgPicture].style.opacity = 1;
 });

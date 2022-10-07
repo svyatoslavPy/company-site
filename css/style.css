@@ -118,6 +118,10 @@
   width: 363px;
   height: 350px;
 }
+.header .nav__logo .nav__menu .menu .menu__cancel {
+  display: flex;
+  justify-content: flex-end;
+}
 @media (max-width: 375px) {
   .header .nav__logo .nav__menu .menu {
     opacity: 1;

@@ -146,6 +146,11 @@ $breakpoint__320: 375px; // breakpoint 320px
           width: 363px;
           height: 350px;
 
+          .menu__cancel {
+            display: flex;
+            justify-content: flex-end;
+          }
+
           @media (max-width: 375px) {
             opacity: 1;
           }
@@ -155,14 +160,7 @@ $breakpoint__320: 375px; // breakpoint 320px
             align-items: center;
             flex-direction: column;
 
-            // .cancel::before {
-            //   content: '';
-            //   display: block;
-
-            //   width: 5px;
-            //   height: 5px;
-            //   background-color: black;
-            // }
+        
 
 
             .button {

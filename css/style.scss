@@ -225,8 +225,6 @@ body {
 			}
 		}
 
-		
-
 		.nav__link {
 			flex-basis: 50%;
 
@@ -346,11 +344,9 @@ body {
 				color: #ffffff;
 				text-decoration: none;
 
-					&:hover {
+				&:hover {
 					color: #f0145a;
 				}
-
-				
 			}
 		}
 	}
@@ -537,8 +533,6 @@ body {
 				padding-top: 15px;
 				color: #24a3ff;
 
-		
-
 				@media (max-width: $breakpoint__1024) {
 					width: 261px;
 				}
@@ -560,7 +554,6 @@ body {
 				line-height: 26px;
 				padding-top: 15px;
 				color: #ffffff;
-
 
 				@media (max-width: $breakpoint__1024) {
 					width: 261px;
@@ -885,7 +878,7 @@ body {
 			.contact__picture--primary {
 				img {
 					@media (max-width: $breakpoint__768) {
-						width: 650px;;
+						width: 650px;
 					}
 				}
 			}

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -41,17 +45,17 @@
 }
 .header .nav {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
   height: 100px;
-  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .header .nav {
     display: flex;
+    flex-direction: row;
     width: 90%;
     flex-wrap: wrap;
-    flex-direction: row;
   }
 }
 .header .nav__logo {
@@ -60,7 +64,11 @@
   align-items: center;
   flex-basis: 100%;
   height: 110px;
+  width: 510px;
   z-index: 1;
+}
+.header .nav__logo:hover {
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .header .nav__logo {
@@ -74,14 +82,15 @@
   }
 }
 .header .nav__logo .servise__item {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  /* Basic/White */
   color: #ffffff;
   opacity: 0;
+}
+.header .nav__logo .servise__item:hover {
+  color: #f0145a;
+  cursor: pointer;
 }
 @media (max-width: 375px) {
   .header .nav__logo .servise__item {
@@ -89,72 +98,117 @@
     margin-left: 20px;
   }
 }
-.header .nav__logo .nav__menu {
+.header .nav__logo .hamburger-menu {
   cursor: pointer;
   margin-left: 65px;
   opacity: 0;
 }
 @media (max-width: 375px) {
-  .header .nav__logo .nav__menu {
+  .header .nav__logo .hamburger-menu {
     opacity: 1;
   }
 }
-.header .nav__logo .nav__menu .menu__item::before {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2.5px;
-  background-color: white;
-  margin-top: 7px;
-}
-.header .nav__logo .nav__menu .menu {
+.header .nav__logo .hamburger-menu #menu__toggle {
   opacity: 0;
+}
+.header .nav__logo .hamburger-menu #menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+.header .nav__logo .hamburger-menu #menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+.header .nav__logo .hamburger-menu #menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.header .nav__logo .hamburger-menu #menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+.header .nav__logo .hamburger-menu .menu__btn {
+  display: flex;
+  align-items: center;
   position: fixed;
-  top: 450px;
-  left: 6px;
-  margin-top: 10px;
+  top: 100px;
+  left: 310px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.header .nav__logo .hamburger-menu .menu__btn > span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
   background-color: white;
-  border-radius: 12px 12px 0px 0px;
-  width: 363px;
-  height: 350px;
 }
-.header .nav__logo .nav__menu .menu .menu__cancel {
-  display: flex;
-  justify-content: flex-end;
+.header .nav__logo .hamburger-menu .menu__btn > span::before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  content: "";
+  top: -8px;
 }
-@media (max-width: 375px) {
-  .header .nav__logo .nav__menu .menu {
-    opacity: 1;
-  }
+.header .nav__logo .hamburger-menu .menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  content: "";
+  top: 8px;
 }
-.header .nav__logo .nav__menu .menu .menu__items {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.header .nav__logo .hamburger-menu .menu__box {
+  display: block;
+  position: fixed;
+  transition-duration: 0.35s;
+  visibility: hidden;
+  bottom: 0;
+  left: -100%;
+  width: 374px;
+  height: 370px;
+  margin: 0;
+  border-radius: 10px;
+  padding: 80px 0px;
+  list-style: none;
+  text-align: center;
+  background-color: #eceff1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
-.header .nav__logo .nav__menu .menu .menu__items .button {
-  padding-top: 20px;
+.header .nav__logo .hamburger-menu .menu__box > span {
+  transition-duration: 0.35s;
 }
-.header .nav__logo .nav__menu .menu .menu__items .button .button__text {
-  width: 335px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 43px;
-  background: #f5f5fa;
-  border-radius: 12px;
-  font-family: "Montserrat";
-  font-style: normal;
+.header .nav__logo .hamburger-menu .menu__box > span::before {
+  transition-duration: 0.35s;
+}
+.header .nav__logo .hamburger-menu .menu__box > span::after {
+  transition-duration: 0.35s;
+}
+.header .nav__logo .hamburger-menu .menu__item {
+  display: block;
+  padding: 12px 24px;
+  transition-duration: 0.35s;
+  color: #333;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
+  text-align: center;
   color: #24a3ff;
+  text-decoration: none;
 }
-.header .nav__logo .nav__menu .menu .menu__items .button .button__text:hover {
-  background: #e6e6eb;
+.header .nav__logo .hamburger-menu .menu__item:hover {
+  background-color: #cfd8dc;
+  color: #f0145a;
 }
 .header .nav .nav__link {
   flex-basis: 50%;
+}
+.header .nav .nav__link:hover {
+  color: gray;
 }
 @media (max-width: 768px) {
   .header .nav .nav__link {
@@ -184,8 +238,8 @@
 .header .nav .nav__link,
 .header .nav .nav__servises {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   -moz-column-gap: 14px;
        column-gap: 14px;
   z-index: 1;
@@ -194,16 +248,14 @@
   .header .nav .nav__link,
 .header .nav .nav__servises {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
   }
 }
 .header .nav .nav__link .nav__item,
 .header .nav .nav__link .nav__btn,
 .header .nav .nav__servises .nav__item,
 .header .nav .nav__servises .nav__btn {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -214,8 +266,8 @@
 .header .nav .nav__link .nav__btn,
 .header .nav .nav__servises .nav__btn {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 33px;
   height: 25px;
   background: #f0145a;
@@ -223,22 +275,26 @@
 }
 .header .nav .nav__link .nav__adress,
 .header .nav .nav__servises .nav__adress {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height */
   text-align: right;
   color: #ffffff;
 }
+.header .nav .nav__link .nav__adress:hover,
+.header .nav .nav__servises .nav__adress:hover {
+  color: #f0145a;
+}
 .header .nav .nav__link .nav__phone,
 .header .nav .nav__servises .nav__phone {
-  font-family: "Montserrat";
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
+}
+.header .nav .nav__link .nav__phone:hover,
+.header .nav .nav__servises .nav__phone:hover {
+  color: #f0145a;
 }
 .header .nav .nav__link .circle::before,
 .header .nav .nav__servises .circle::before {
@@ -248,6 +304,10 @@
   height: 6px;
   background: white;
   border-radius: 50%;
+}
+.header .nav .nav__link .circle::before:hover,
+.header .nav .nav__servises .circle::before:hover {
+  color: #f0145a;
 }
 @media (max-width: 768px) {
   .header .nav .nav__servises {
@@ -261,15 +321,23 @@
     opacity: 0;
   }
 }
+@media (max-width: 768px) {
+  .header .nav .nav__servises:hover {
+    color: #f0145a;
+  }
+}
 .header .nav .nav__servises .nav__text,
 .header .nav .nav__servises .nav__text--primary {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   text-align: right;
   color: #ffffff;
+  text-decoration: none;
+}
+.header .nav .nav__servises .nav__text:hover,
+.header .nav .nav__servises .nav__text--primary:hover {
+  color: #f0145a;
 }
 .header .picture {
   position: relative;
@@ -519,6 +587,12 @@
   display: flex;
   margin-top: 20px 0 0 0;
 }
+@media (max-width: 768px) {
+  .main .about-us {
+    display: flex;
+    flex-direction: column;
+  }
+}
 @media (max-width: 375px) {
   .main .about-us {
     display: flex;
@@ -529,9 +603,21 @@
   position: relative;
 }
 @media (max-width: 1024px) {
-  .main .about-us__title img {
+  .main .about-us__title .about-us__picture {
     width: 400px;
-    height: 518px;
+    height: 530px;
+  }
+}
+@media (max-width: 768px) {
+  .main .about-us__title .about-us__picture {
+    width: 656px;
+    height: 530px;
+  }
+}
+@media (max-width: 375px) {
+  .main .about-us__title .about-us__picture {
+    width: 400px;
+    height: 532px;
   }
 }
 .main .about-us__title__picture {
@@ -542,8 +628,27 @@
   width: 400px;
   height: 344px;
   opacity: 0;
+  top: 0px;
   position: absolute;
   left: 0;
+}
+@media (max-width: 1024px) {
+  .main .about-us__title .img {
+    width: 400px;
+    height: 530px;
+  }
+}
+@media (max-width: 768px) {
+  .main .about-us__title .img {
+    width: 656px;
+    height: 530px;
+  }
+}
+@media (max-width: 375px) {
+  .main .about-us__title .img {
+    width: 336px;
+    height: 530px;
+  }
 }
 .main .about-us__subtitle {
   width: 1320px;
@@ -553,14 +658,14 @@
 }
 @media (max-width: 1024px) {
   .main .about-us__subtitle {
-    width: 1320px;
+    width: 660px;
     height: 530px;
   }
 }
 @media (max-width: 375px) {
   .main .about-us__subtitle {
     width: 405px;
-    height: 900px;
+    height: 700px;
   }
 }
 .main .about-us__subtitle {
@@ -604,9 +709,15 @@
     font-size: 38px;
   }
 }
+@media (max-width: 768px) {
+  .main .about-us__subtitle .about-us__text--primary {
+    width: 620px;
+  }
+}
 @media (max-width: 375px) {
   .main .about-us__subtitle .about-us__text--primary {
-    width: 255px;
+    width: 305px;
+    font-size: 30px;
   }
 }
 .main .about-us__subtitle .about-us__text--secondary {
@@ -646,8 +757,6 @@
   display: flex;
   justify-content: center;
   padding-top: 60px;
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -661,15 +770,28 @@
   flex-wrap: wrap;
 }
 .main .clients img {
-  width: 420px;
+  width: 504px;
+}
+@media (max-width: 1024px) {
+  .main .clients img {
+    width: 341.3px;
+  }
+}
+@media (max-width: 768px) {
+  .main .clients img {
+    width: 255.3px;
+  }
+}
+@media (max-width: 375px) {
+  .main .clients img {
+    width: 380px;
+  }
 }
 
 .footer {
   background: #f5f5fa;
 }
 .footer .footer__text .footer__item {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -678,8 +800,6 @@
   color: #24a3ff;
 }
 .footer .footer__text .footer__item--primary {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
@@ -694,25 +814,85 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1024px) {
+  .footer .contact__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 375px) {
   .footer .contact__wrapper {
     display: flex;
     flex-wrap: wrap;
   }
 }
-.footer .contact__wrapper .contact {
+.footer .contact__wrapper .contact,
+.footer .contact__wrapper .contact__primary {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
 }
-.footer .contact__wrapper .contact__info {
+@media (max-width: 1024px) {
+  .footer .contact__wrapper .contact__picture img,
+.footer .contact__wrapper .contact__primary__picture img {
+    width: 281px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact__picture img,
+.footer .contact__wrapper .contact__primary__picture img {
+    width: 279px;
+  }
+}
+@media (max-width: 375px) {
+  .footer .contact__wrapper .contact__picture img,
+.footer .contact__wrapper .contact__primary__picture img {
+    width: 338px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact .contact__picture--primary img,
+.footer .contact__wrapper .contact__primary .contact__picture--primary img {
+    width: 650px;
+  }
+}
+.footer .contact__wrapper .contact__info,
+.footer .contact__wrapper .contact__primary__info {
   padding: 0 30px;
   width: 420px;
   height: 250px;
   background: #ffffff;
   border-radius: 8px;
 }
-.footer .contact__wrapper .contact__info .info-element {
+@media (max-width: 1024px) {
+  .footer .contact__wrapper .contact__info,
+.footer .contact__wrapper .contact__primary__info {
+    width: 281px;
+    height: 406px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact__info,
+.footer .contact__wrapper .contact__primary__info {
+    width: 281px;
+    height: 406px;
+  }
+}
+@media (max-width: 375px) {
+  .footer .contact__wrapper .contact__info,
+.footer .contact__wrapper .contact__primary__info {
+    width: 341px;
+    height: 326px;
+  }
+}
+.footer .contact__wrapper .contact__info .info-element,
+.footer .contact__wrapper .contact__primary__info .info-element {
   content: "";
   display: block;
   width: 360px;
@@ -720,18 +900,22 @@
   background: #e6e6f0;
   margin-bottom: 15px;
 }
-.footer .contact__wrapper .contact__info .contact__text--primary {
-  font-family: "Montserrat";
-  font-style: normal;
+@media (max-width: 1024px) {
+  .footer .contact__wrapper .contact__info .info-element,
+.footer .contact__wrapper .contact__primary__info .info-element {
+    width: 230px;
+  }
+}
+.footer .contact__wrapper .contact__info .contact__text--primary,
+.footer .contact__wrapper .contact__primary__info .contact__text--primary {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   padding-top: 30px;
   color: #24a3ff;
 }
-.footer .contact__wrapper .contact__info .contact__text--special {
-  font-family: "Montserrat";
-  font-style: normal;
+.footer .contact__wrapper .contact__info .contact__text--special,
+.footer .contact__wrapper .contact__primary__info .contact__text--special {
   font-weight: 700;
   font-size: 12px;
   padding-top: 15px;
@@ -741,14 +925,43 @@
   text-transform: uppercase;
   color: #b3b3ba;
 }
-.footer .contact__wrapper .contact__info .contact__text {
-  font-family: "Montserrat";
-  font-style: normal;
+.footer .contact__wrapper .contact__info .contact__text,
+.footer .contact__wrapper .contact__primary__info .contact__text {
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   width: 360px;
   color: #000000;
+}
+@media (max-width: 1024px) {
+  .footer .contact__wrapper .contact__info .contact__text,
+.footer .contact__wrapper .contact__primary__info .contact__text {
+    width: 221px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact__info .contact__text,
+.footer .contact__wrapper .contact__primary__info .contact__text {
+    width: 249px;
+  }
+}
+@media (max-width: 375px) {
+  .footer .contact__wrapper .contact__info .contact__text,
+.footer .contact__wrapper .contact__primary__info .contact__text {
+    width: 255px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact__info .contact__text--secondary,
+.footer .contact__wrapper .contact__primary__info .contact__text--secondary {
+    width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .contact__wrapper .contact .contact__info--primary,
+.footer .contact__wrapper .contact__primary .contact__info--primary {
+    width: 650px;
+  }
 }
 .footer .info__element {
   content: "";
@@ -776,8 +989,6 @@
   margin-top: 21px;
 }
 .footer .footer__nav .nav-social__wrapper .nav__social .nav-social__item {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -792,20 +1003,14 @@
   background: #b3b3ba;
 }
 .footer .footer__nav .nav-social__wrapper .nav__social .nav-social__primary {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
-  /* identical to box height */
   letter-spacing: 1px;
   text-transform: uppercase;
-  /* Active / Regular */
   color: #24a3ff;
 }
 .footer .footer__nav .nav-social__wrapper .nav__social .nav__number {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -813,21 +1018,15 @@
   color: #46466e;
 }
 .footer .footer__nav .nav-social__wrapper .nav__social .nav__email {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #24a3ff;
 }
 .footer .footer__nav .nav-social__info {
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height */
   text-align: right;
-  /* Grey / Text */
   color: #b3b3ba;
 }/*# sourceMappingURL=style.css.map */

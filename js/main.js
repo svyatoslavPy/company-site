@@ -12,11 +12,6 @@ let imgs = document.querySelectorAll('.img')
 let next = document.querySelector('.btn__slider--primary')
 // console.log(next)
 
-
-let burger = document.querySelector('.nav__menu');
-console.log(burger);
-
-
 let menu = document.querySelectorAll('.menu');
 
 let back = document.querySelector('.btn__slider--secondary')
@@ -27,9 +22,7 @@ let btn_default = document.querySelector('.btn__slider');
 
 let imgPicture = 0;
 
-burger.addEventListener('click', () => {
-    menu.style.opacity = '1';
-})
+
 
 button.addEventListener('click', () => {
     infoText.classList.toggle('info_active');

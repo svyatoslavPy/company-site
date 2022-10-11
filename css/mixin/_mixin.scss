@@ -1,39 +1,35 @@
-// @mixin font-graphil($size: false, $color: false, $weight: false, $lh: false) {
-//   // font-family:
-//   @if $size {
-//     font-size: $size;
-//   }
-//   @if $color {
-//     color: $color;
-//   }
-//   @if $weight {
-//     font-weight: $weight;
-//   }
-//   @if $lh {
-//     line-height: $lh;
-//   }
-// }
-
+@mixin fontgraphil($size: false, $color: false, $weight: false, $lh: false) {
+	font-family: 'Montserrat';
+	@if $size {
+		font-size: $size;
+	}
+	@if $color {
+		color: $color;
+	}
+	@if $weight {
+		font-weight: $weight;
+	}
+	@if $lh {
+		line-height: $lh;
+	}
+}
 
 @mixin flex($flex: false, $justify: false, $direction: false, $align: false) {
-  @if $flex {
-    display: $flex;
-  }
-  @if $justify {
-    justify-content: $justify;
-  }
-  @if $direction {
-    flex-direction: $direction;
-  }
-  @if $align {
-    align-items: $align;
-  }
+	@if $flex {
+		display: $flex;
+	}
+	@if $justify {
+		justify-content: $justify;
+	}
+	@if $direction {
+		flex-direction: $direction;
+	}
+	@if $align {
+		align-items: $align;
+	}
 }
 
 @mixin font($size) {
-  font-family: "Open Sans", sans-serif;
-  font-size: $size;
+	font-family: 'Open Sans', sans-serif;
+	font-size: $size;
 }
-
-
-
